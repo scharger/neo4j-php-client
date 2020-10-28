@@ -17,8 +17,5 @@ interface Neo4jExceptionInterface extends NeoClientExceptionInterface
 
     const EFFECT_ROLLBACK = 'ROLLBACK';
 
-    /**
-     * @return string
-     */
-    public function effect();
+
 }

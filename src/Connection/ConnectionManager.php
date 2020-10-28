@@ -29,8 +29,10 @@ class ConnectionManager
      * @param string                 $alias
      * @param string                 $uri
      * @param BaseConfiguration|null $config
+     *
+     * @return void
      */
-    public function registerConnection($alias, $uri, $config = null)
+    public function registerConnection($alias, $uri, $config = null): void
     {
         $this->registerExistingConnection($alias, new Connection($alias, $uri, $config));
     }
@@ -38,8 +40,10 @@ class ConnectionManager
     /**
      * @param string     $alias
      * @param Connection $connection
+     *
+     * @return void
      */
-    public function registerExistingConnection($alias, Connection $connection)
+    public function registerExistingConnection($alias, Connection $connection): void
     {
         $this->connections[$alias] = $connection;
     }
@@ -66,8 +70,10 @@ class ConnectionManager
 
     /**
      * @param string $alias
+     *
+     * @return void
      */
-    public function setMaster($alias)
+    public function setMaster($alias): void
     {
         $this->master = $this->connections[$alias];
     }

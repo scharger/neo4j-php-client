@@ -16,15 +16,9 @@ use Symfony\Component\EventDispatcher\Event;
 
 class FailureEvent extends Event
 {
-    /**
-     * @var Neo4jExceptionInterface
-     */
-    protected $exception;
 
-    /**
-     * @var bool
-     */
-    protected $shouldThrowException = true;
+
+
 
     /**
      * @param Neo4jExceptionInterface $exception
@@ -34,18 +28,9 @@ class FailureEvent extends Event
         $this->exception = $exception;
     }
 
-    /**
-     * @return Neo4jExceptionInterface
-     */
-    public function getException()
-    {
-        return $this->exception;
-    }
 
-    public function disableException()
-    {
-        $this->shouldThrowException = false;
-    }
+
+
 
     /**
      * @return bool

@@ -41,8 +41,10 @@ class Neo4jException extends \Exception implements Neo4jExceptionInterface
 
     /**
      * @param string $code
+     *
+     * @return void
      */
-    public function setNeo4jStatusCode($code)
+    public function setNeo4jStatusCode($code): void
     {
         $this->statusCode = $code;
     }

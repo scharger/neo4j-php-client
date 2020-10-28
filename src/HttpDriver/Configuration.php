@@ -46,25 +46,9 @@ class Configuration extends BaseConfiguration implements ConfigInterface
         ]);
     }
 
-    /**
-     * @param HttpClient $httpClient
-     *
-     * @return Configuration
-     */
-    public function setHttpClient(HttpClient $httpClient)
-    {
-        return $this->setValue('http_client', $httpClient);
-    }
 
-    /**
-     * @param RequestFactory $requestFactory
-     *
-     * @return Configuration
-     */
-    public function setRequestFactory(RequestFactory $requestFactory)
-    {
-        return $this->setValue('request_factory', $requestFactory);
-    }
+
+
 
     /**
      * @param int $timeout
@@ -77,32 +61,9 @@ class Configuration extends BaseConfiguration implements ConfigInterface
         return $this->setValue('timeout', $timeout);
     }
 
-    /**
-     * @param string $interface
-     *
-     * @return $this
-     * @deprecated Will be removed in 5.0. The CurlInterface option will disappear.
-     */
-    public function withCurlInterface($interface)
-    {
-        return $this->setValue('curl_interface', $interface);
-    }
 
-    /**
-     * @return int
-     * @deprecated Will be removed in 5.0
-     */
-    public function getTimeout()
-    {
-        return $this->getValue('timeout');
-    }
 
-    /**
-     * @return string
-     * @deprecated Will be removed in 5.0.
-     */
-    public function getCurlInterface()
-    {
-        return $this->getValue('curl_interface');
-    }
+
+
+
 }

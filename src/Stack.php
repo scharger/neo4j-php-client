@@ -65,6 +65,8 @@ class Stack implements StackInterface
      * @param string     $query
      * @param null|array $parameters
      * @param null|array $tag
+     *
+     * @return void
      */
     public function push($query, $parameters = null, $tag = null)
     {
@@ -76,6 +78,8 @@ class Stack implements StackInterface
      * @param string $query
      * @param null|array $parameters
      * @param null|array $tag
+     *
+     * @return void
      */
     public function pushWrite($query, $parameters = null, $tag = null)
     {
@@ -88,6 +92,8 @@ class Stack implements StackInterface
      * @param $query
      * @param array|null $parameters
      * @param array|null $tag
+     *
+     * @return void
      */
     public function addPreflight($query, $parameters = null, $tag = null)
     {

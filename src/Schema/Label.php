@@ -26,11 +26,5 @@ final class Label
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
+
 }

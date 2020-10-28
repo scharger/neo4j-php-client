@@ -38,19 +38,16 @@ class Client implements ClientInterface
      */
     protected $eventDispatcher;
 
-    public function __construct(ConnectionManager $connectionManager, EventDispatcherInterface $eventDispatcher = null)
-    {
-        $this->connectionManager = $connectionManager;
-        $this->eventDispatcher = null !== $eventDispatcher ? $eventDispatcher : new EventDispatcher();
-    }
+
 
     /**
-     * Run a Cypher statement against the default database or the database specified.
+     *  Run a Cypher statement against the default database or the database specified.
      *
      * @param $query
      * @param null|array  $parameters
      * @param null|string $tag
      * @param null|string $connectionAlias
+     * @param string $query
      *
      * @throws \GraphAware\Neo4j\Client\Exception\Neo4jExceptionInterface
      *

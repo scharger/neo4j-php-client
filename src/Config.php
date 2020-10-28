@@ -19,35 +19,9 @@ class Config
 
     protected $defaultTcpPort = 8687;
 
-    /**
-     * @return Config
-     */
-    public static function create()
-    {
-        return new self();
-    }
 
-    /**
-     * @param int $port
-     *
-     * @return $this
-     */
-    public function withDefaultHttpPort($port)
-    {
-        $this->defaultHttpPort = (int) $port;
 
-        return $this;
-    }
 
-    /**
-     * @param int $port
-     *
-     * @return $this
-     */
-    public function withDefaultTcpPort($port)
-    {
-        $this->defaultTcpPort = (int) $port;
 
-        return $this;
-    }
+
 }

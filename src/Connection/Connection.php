@@ -72,13 +72,7 @@ class Connection
         return $this->alias;
     }
 
-    /**
-     * @return \GraphAware\Common\Driver\DriverInterface
-     */
-    public function getDriver()
-    {
-        return $this->driver;
-    }
+
 
     /**
      * @param null  $query
@@ -123,28 +117,7 @@ class Connection
         }
     }
 
-    /**
-     * @param array $queue
-     *
-     * @return \GraphAware\Common\Result\ResultCollection
-     */
-    public function runMixed(array $queue)
-    {
-        $this->checkSession();
-        $pipeline = $this->createPipeline();
 
-        foreach ($queue as $element) {
-            if ($element instanceof StackInterface) {
-                foreach ($element->statements() as $statement) {
-                    $pipeline->push($statement->text(), $statement->parameters(), $statement->getTag());
-                }
-            } elseif ($element instanceof Statement) {
-                $pipeline->push($element->text(), $element->parameters(), $element->getTag());
-            }
-        }
-
-        return $pipeline->run();
-    }
 
     /**
      * @return \GraphAware\Common\Transaction\TransactionInterface
@@ -166,7 +139,7 @@ class Connection
         return $this->session;
     }
 
-    private function buildDriver()
+    private function buildDriver(): void
     {
         $params = parse_url($this->uri);
 
@@ -186,7 +159,7 @@ class Connection
         }
     }
 
-    private function checkSession()
+    private function checkSession(): void
     {
         if (null === $this->session) {
             $this->session = $this->driver->session();

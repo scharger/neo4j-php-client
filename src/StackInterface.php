@@ -26,41 +26,17 @@ interface StackInterface
      */
     public static function create($tag = null, $connectionAlias = null);
 
-    /**
-     * @param string     $query
-     * @param null|array $parameters
-     * @param null|array $tag
-     */
-    public function push($query, $parameters = null, $tag = null);
 
-    /**
-     * @param string     $query
-     * @param null|array $parameters
-     * @param null|array $tag
-     */
-    public function pushWrite($query, $parameters = null, $tag = null);
 
-    /**
-     * @param $query
-     * @param array|null $parameters
-     * @param array|null $tag
-     */
-    public function addPreflight($query, $parameters = null, $tag = null);
 
-    /**
-     * @return bool
-     */
-    public function hasPreflights();
 
-    /**
-     * @return \GraphAware\Common\Cypher\Statement[]
-     */
-    public function getPreflights();
 
-    /**
-     * @return int
-     */
-    public function size();
+
+
+
+
+
+
 
     /**
      * @return Statement[]

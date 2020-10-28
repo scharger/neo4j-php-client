@@ -30,8 +30,10 @@ class Response
 
     /**
      * @param array $rawResponse
+     *
+     * @return void
      */
-    public function setRawResponse($rawResponse)
+    public function setRawResponse($rawResponse): void
     {
         $this->rawResponse = $rawResponse;
 
@@ -60,16 +62,18 @@ class Response
 
     /**
      * @param Result $result
+     *
+     * @return void
      */
-    public function addResult(Result $result)
+    public function addResult(Result $result): void
     {
         $this->results[] = $result;
     }
 
     /**
-     * @return Result
+     * @return null|Result
      */
-    public function getResult()
+    public function getResult(): ?Result
     {
         if (null !== $this->results && !$this->results instanceof Result) {
             reset($this->results);
@@ -90,8 +94,10 @@ class Response
 
     /**
      * @param Result $result
+     *
+     * @return void
      */
-    public function setResult(Result $result)
+    public function setResult(Result $result): void
     {
         $this->results = $result;
     }
